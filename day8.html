@@ -11,19 +11,23 @@
         .myHeading {
             color: red;
         }
+        
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1 id="title">This is the title of the page</h1>
+        <h1 id="title" onclick="makeItClickable()">This is the title of the page</h1>
         <h2>This is the subtitle of the page</h2>
     </header>
 
     <main>
         <hr>
 
-        <ul id="firstList">
+        <ul id="firstList" onmouseover="firstUlDisappear()">
             <li>1st</li>
             <li>2nd</li>
             <li>3rd</li>
@@ -54,8 +58,8 @@
     </footer>
     <script>
         /* EXERCISE 1
-                                                                                                                                                                                                                                                                                                                                                                                       Write a function for changing the title of the document in something else.
-                                                                                                                                                                                                                                                                                                                                                                                      */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Write a function for changing the title of the document in something else.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
         const changeTitle = function(newTitle) {
             let alternativeTitle = document.getElementsByTagName("title")
@@ -68,9 +72,7 @@
 
         const addClassToTitle = function() {
             let alternativeClass = document.getElementById("title")
-
             alternativeClass.classList.add = "myHeading"
-            console.log(alternativeClass)
         };
         addClassToTitle()
             /* EXERCISE 3
@@ -81,7 +83,6 @@
             for (let child of document.querySelectorAll("div> p"))
                 child.innerText = "test new text in div"
         };
-
         changePcontent();
 
         /* EXERCISE 4
@@ -101,31 +102,39 @@
 
         const addToTheSecond = function(content) {
             let secondList = document.getElementById("secondList")
-            secondList.innerHTML = "<li>4rd</li>"
+            secondList.innerHTML += "<li>4rd</li>"
         };
         addToTheSecond()
-            /* EXERCISE 6
-             Write a function for adding a second paragraph to the first div.
-            */
 
-        const addParagraph = function(content) {
-            //
-        };
-
-        /* EXERCISE 7
-         Write a function for making the first unordered list disappear.
+        /* EXERCISE 6
+         Write a function for adding a second paragraph to the first div.
         */
 
-        const firstUlDisappear = function() {
-            //
+        const addParagraph = function(content) {
+            let divInterested = document.querySelectorAll("div> p")
+            let newP = document.createElement("p")
+            newP.innerText = "It's so funny!"
+            divInterested.appendChild = "newP"
         };
+        addParagraph()
+            /* EXERCISE 7
+             Write a function for making the first unordered list disappear.
+            */
+
+        const firstUlDisappear = function() {
+            let hiddenUl = document.querySelector("ul#firstList li")
+            console.log(hiddenUl)
+            hiddenUl.classList.toggle("hidden")
+        }
 
         /* EXERCISE 8
          Write a function for making the background of every unordered list green.
         */
 
         const paintItGreen = function() {
-            //
+            document.querySelectorAll("table ul li").style.BackgrounColor = "green"
+
+
         };
 
         /* EXERCISE 9
@@ -133,12 +142,21 @@
         */
 
         const makeItClickable = function() {
-            //
-        };
+            let red = Math.floor(Math.random() * 255)
+            let blu = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let rgb = [red,
+                blu, green
+            ]
 
-        /* EXERCISE 10
-         Change the footer text with something else when the user clicks on it.
-        */
+            let h1 = document.getElementByid("title")
+            console.log(title)
+            h1.style.color = "rgb(red, blu, green)"
+        };
+        makeItClickable()
+            /* EXERCISE 10
+             Change the footer text with something else when the user clicks on it.
+            */
 
         const changeFooterText = function() {
             //
