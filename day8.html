@@ -1,4 +1,3 @@
-<!-- saved from url=(0436)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/585615096809212.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20210929%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210929T120540Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M1-D8.html&X-Amz-Signature=40a8173fceffb836b0c5e35681aedeae53dc0daa4a49d29ae1176d58228b4ada -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,8 +54,8 @@
     </footer>
     <script>
         /* EXERCISE 1
-                                                                                                                                                                                                                                                                                               Write a function for changing the title of the document in something else.
-                                                                                                                                                                                                                                                                                              */
+                                                                                                                                                                                                                                                                                                                                                                                       Write a function for changing the title of the document in something else.
+                                                                                                                                                                                                                                                                                                                                                                                      */
 
         const changeTitle = function(newTitle) {
             let alternativeTitle = document.getElementsByTagName("title")
@@ -90,20 +89,24 @@
         */
 
         const changeUrls = function() {
-            //
+            for (let date of document.getElementsByTagName("a"))
+                date.href = "https://www.google.com"
         };
+        changeUrls()
+
 
         /* EXERCISE 5
          Write a function for adding a new list item in the second unordered list.
         */
 
         const addToTheSecond = function(content) {
-            //
+            let secondList = document.getElementById("secondList")
+            secondList.innerHTML = "<li>4rd</li>"
         };
-
-        /* EXERCISE 6
-         Write a function for adding a second paragraph to the first div.
-        */
+        addToTheSecond()
+            /* EXERCISE 6
+             Write a function for adding a second paragraph to the first div.
+            */
 
         const addParagraph = function(content) {
             //
